@@ -32,7 +32,6 @@ def get_scraped_data():
 	blog_name = request.args.get('blog_name')
 	data = list()
 	scraped_data_file = os.path.join(BASE_DIR, blog_name, 'blog_extracter', 'scraped_output.csv')
-	print scraped_data_file
 	if os.path.exists(scraped_data_file):
 		with open(scraped_data_file, 'r') as csv_file:
 			rows = list(csv.reader(csv_file))[1:]
