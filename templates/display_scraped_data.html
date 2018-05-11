@@ -1,0 +1,41 @@
+<h3>Scraped Blog Data for {{blog}}</h3>
+<h2>
+	<a class="btn" href="{{ url_for('listing.list_blogs') }}"><i class="icon-plus"></i>Go back</a>
+</h2>
+<table class='scraped_data_table' border=1 frame=void rules=rows>
+	<thead>
+		<tr>
+			<td>Title</td>
+			<td>Word Count</td>
+			<td>Published Date</td>
+			<td>Author</td>
+			<td>Comments Count</td>
+		</tr>
+
+	</thead>
+	<tbody>
+		{% for d in data %}
+		    <tr>
+		    	<td><b><a href="{{d['link']}}"> {{ d['title'].decode('utf-8)') }}</b></a></td>
+		    	<td>
+		    		{{d['word_count']}}
+		    	</td>
+		    	<td>
+		    		{{d['date']}}
+		    	</td>
+		    	<td>
+		    		{{d['author'].decode('utf-8')}}
+		    	</td>
+		    	<td align="right">
+		    		{{d['comments_count']}}
+		    	</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<h2>
+	<a class="btn" href="{{ url_for('listing.list_blogs') }}"><i class="icon-plus"></i>Go back</a>
+</h2>
+
+		
+	

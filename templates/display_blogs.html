@@ -1,0 +1,43 @@
+<h3>Blogs List</h3>
+<h4>
+	<a class="btn" href="{{ url_for('frontend.index') }}"><i class="icon-plus"></i>Home Page</a>
+</h4>
+<table class="table">
+	<thead>
+		<tr>
+			<td>Name</td>
+			<td>Action</td>
+			<td>Last Scraped Date</td>
+			<td>Scraped Data</td>
+		</tr>
+
+	</thead>
+	<tbody>
+		{% for blog in blogs %}
+		    <tr>
+		    	<td><b><a href="{{blog['blog_url']}}"> {{ blog['blog_name'].replace('_', ' ').title() }}</b></a></td>
+		    	<td>
+		    		{% if blog['scrape_status'] == 'not running' %}
+		    			<a class="btn" href="{{ url_for('execute.start_scraping', blog_name=blog['blog_name']) }}"><i class="icon-plus"></i>Click to scrape</a>
+		    		{% else %}
+		    			<a class="btn" href="{{ url_for('status.check_status', blog_name=blog['blog_name']) }}"><i class="icon-plus"></i>Check status</a>
+		    		{% endif %}
+		    	</td>
+		    	<td>
+		    		{% if blog.get('last_scraped_date')%}
+		    			{{blog['last_scraped_date']}}
+		    		{% else %}
+		    			N/A
+		    		{% endif %}
+
+		    	</td>
+		    	<td>
+		    		<a class="btn" href="{{ url_for('listing.get_scraped_data', blog_name=blog['blog_name']) }}">View</a>
+		    	</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+		
+	

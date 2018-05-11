@@ -1,0 +1,19 @@
+{% if status == 'running' %}
+	<h3>Scraper for the blog {{blog}} is running now</h3>
+		<h2>
+			<a class="btn" href="{{ url_for('status.check_status', blog_name=blog) }}"><i class="icon-plus"></i>Check status</a>
+		</h2>
+		<h2>
+			<a class="btn" href="{{ url_for('listing.list_blogs') }}"><i class="icon-plus"></i>Back</a>
+		</h2>
+	</h3>
+{% else %}
+	<h3>Scraper for the blog {{blog}} has completed</h3>
+		<h2>
+			<a class="btn" href="{{ url_for('listing.get_scraped_data', blog_name=blog) }}"><i class="icon-plus"></i>View scraped data</a>
+		</h2>
+		<h2>
+			<a class="btn" href="{{ url_for('listing.list_blogs') }}"><i class="icon-plus"></i>Back</a>
+		</h2>
+	</h3>
+{% endif %}
