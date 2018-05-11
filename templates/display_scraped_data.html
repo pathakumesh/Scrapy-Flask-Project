@@ -16,7 +16,7 @@
 	<tbody>
 		{% for d in data %}
 		    <tr>
-		    	<td><b><a href="{{d['link']}}"> {{ d['title'].decode('utf-8)') }}</b></a></td>
+		    	<td><b><a href="{{d['link']}}"> {{ d['title'] }}</b></a></td>
 		    	<td>
 		    		{{d['word_count']}}
 		    	</td>
@@ -24,7 +24,7 @@
 		    		{{d['date']}}
 		    	</td>
 		    	<td>
-		    		{{d['author'].decode('utf-8')}}
+		    		{{d['author']}}
 		    	</td>
 		    	<td align="right">
 		    		{{d['comments_count']}}
