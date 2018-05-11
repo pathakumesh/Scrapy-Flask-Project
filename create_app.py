@@ -11,7 +11,7 @@ def create_app(config_filename):
 
     app = Flask(__name__)
     app.config.from_object(config_filename)
-    _configure_logging(app)
+    # _configure_logging(app)
 
     from views.listing import listing
     from views.frontend import frontend
