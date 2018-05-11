@@ -3,7 +3,7 @@ import os
 from flask import Blueprint,render_template, session,request
 from create_app import app
 from etc.blog_urls import blog_urls
-from status import check_status, get_last_scraped_date
+from views.status import check_status, get_last_scraped_date
 
 listing = Blueprint("listing", __name__)
 
