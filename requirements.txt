@@ -34,7 +34,6 @@ lxml==3.7.3
 MarkupSafe==1.0
 packaging==16.8
 parsel==1.1.0
-PyAAF==1.0.0
 pyasn1==0.2.3
 pyasn1-modules==0.0.8
 pycparser==2.17
