@@ -1,6 +1,6 @@
 import csv
 import os
-from flask import Blueprint,render_template, session,request
+from flask import Blueprint,render_template, session,request, send_file
 from create_app import app
 from etc.blog_urls import blog_urls
 from views.status import check_status, get_last_scraped_date
@@ -33,6 +33,9 @@ def get_scraped_data():
 	data = list()
 	scraped_data_file = os.path.join(BASE_DIR, blog_name, 'blog_extracter', 'scraped_output.csv')
 	if os.path.exists(scraped_data_file):
+		download = request.args.get('download')
+		if download:
+			return send_file(scraped_data_file, as_attachment=True, add_etags=True, attachment_filename="%s_scraped_output.csv" % blog_name)
 		with open(scraped_data_file, 'r') as csv_file:
 			rows = list(csv.reader(csv_file))[1:]
 			for row in rows:

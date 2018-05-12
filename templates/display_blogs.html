@@ -34,6 +34,9 @@
 		    	<td>
 		    		<a class="btn" href="{{ url_for('listing.get_scraped_data', blog_name=blog['blog_name']) }}">View</a>
 		    	</td>
+		    	<td>
+		    		<a class="btn" href="{{ url_for('listing.get_scraped_data', blog_name=blog['blog_name'], download=true) }}">Download</a>
+		    	</td>
 			</tr>
 		{% endfor %}
 	</tbody>
