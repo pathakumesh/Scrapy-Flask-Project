@@ -19,5 +19,5 @@ logging.disable(0)
 
 app = DispatcherMiddleware(app, {'/main': app})
 
-# run_simple('0.0.0.0', 5500, app, True, True)
+run_simple('0.0.0.0', 5500, app, True, True)
 
