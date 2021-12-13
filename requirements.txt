@@ -30,7 +30,7 @@ ipaddress==1.0.18
 itsdangerous==0.24
 Jinja2==2.10
 keyring==12.0.0
-lxml==3.7.3
+lxml==4.6.5
 MarkupSafe==1.0
 packaging==16.8
 parsel==1.1.0
