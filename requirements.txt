@@ -55,7 +55,7 @@ service-identity==16.0.0
 shub==2.7.0
 six==1.10.0
 tqdm==4.19.8
-Twisted==17.1.0
+Twisted==22.1.0
 urllib3==1.22
 w3lib==1.17.0
 webencodings==0.5.1
